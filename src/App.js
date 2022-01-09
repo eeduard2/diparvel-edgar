@@ -5,9 +5,11 @@ import Navbar from './components/navegacion/Navbar';
 import Inicio from './components/paginas/Inicio';
 import Items from './components/paginas/Items';
 import Pokemo from './components/paginas/Pokemon';
+import { Card } from 'reactstrap';
 
 function App() {
   const [todos, setTodos] = useState()
+  
 /*const url = 'https://pokeapi.co/api/v2/pokemon/ditto'
 const fetchApi = async () =>{
   const response = await fetch(url)
@@ -16,15 +18,15 @@ const fetchApi = async () =>{
 useEffect(() =>{
   fetchApi()
 },[])*/
-const datapokemon = 0;
+ 
 
 useEffect(() => {
-  fetch(`https://pokeapi.co/api/v2/pokemon/`)
+  fetch(`https://pokeapi.co/api/v2/pokemon`)
     .then(res => res.json())
     .then(data => {
       //const datapokemon =data.results[0];
       setTodos(data.results)
-      //console.log(todos)
+      console.log(data)
       // Si todo esta cool, actualizamos el pokemón
       // Y le indicamos que no hay error
       
@@ -33,28 +35,17 @@ useEffect(() => {
       
     })
 }, [])
-console.log(todos)
+ 
+
+
   return (
-    <div className="App">
+    <div className="App container">
       <Router>
-      <Navbar/>
-      <ul>
-        { !todos ? 'Cargando..' : 
-        todos.map( (todo,index)=>{
-          return <li>{todo.name}</li>
-        }
-        ) 
-
-        }
-      </ul>
-
-       
-      
+      <Navbar/>  
       <Switch>
         <Route path="/" exact component={Inicio}/>
-        <Route path="/pokemo"  component={Pokemo}/>
+        <Route path="/pokemo"  component={() => <Pokemo todos={todos} />}/>
         <Route path="/items"  component={Items}/>
-        
       </Switch> 
       </Router>
       
