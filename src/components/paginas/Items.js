@@ -112,7 +112,7 @@ const items = () => {
         </Modal.Header>
         <Modal.Body><h1 align="center">{nombre}</h1>
         <br/>
-          <img align="center" src={imagen} width="250"/> 
+          <img className ="card-img-top" align="center" src={imagen} width="250"/> 
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

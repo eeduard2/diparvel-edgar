@@ -10,27 +10,11 @@ import { Card } from 'reactstrap';
 
 function App() {
   const [todos, setTodos] = useState()
-  
-/*const url = 'https://pokeapi.co/api/v2/pokemon/ditto'
-const fetchApi = async () =>{
-  const response = await fetch(url)
-  console.log(response)
-}
-useEffect(() =>{
-  fetchApi()
-},[])*/
- 
-
 useEffect(() => {
   fetch(`https://pokeapi.co/api/v2/pokemon`)
     .then(res => res.json())
     .then(data => {
-      //const datapokemon =data.results[0];
       setTodos(data.results)
-    //  console.log(data)
-      // Si todo esta cool, actualizamos el pokemón
-      // Y le indicamos que no hay error
-      
     })
     .catch(err => {
       

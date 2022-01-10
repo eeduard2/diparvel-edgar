@@ -19,7 +19,7 @@
     "reactstrap": "^9.0.1",
     "web-vitals": "^2.1.3"
   },
-  "homepage": "loc",
+  "homepage": "http://localhost/diparvel-edgar/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
