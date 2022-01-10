@@ -2,12 +2,12 @@ import React from "react"
 import { Link } from "react-router-dom";
 const navbar = () => {
     return (
-        <div>
+        <div >
           <nav className="navbar navbar-light bg-light fixed-top">
       <div className="container-fluid">
         <Link to='/'>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" width="75"/> 
-        </Link>
+        </Link> <h3>Edgar React.JS - Diparvel </h3>
         <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -22,10 +22,10 @@ const navbar = () => {
                 <Link className="nav-link" to="/">Inicio</Link>
               </li>
               <li className="nav-item">
-              <Link className="nav-link " to="/pokemo">Pokemons</Link>
+              <Link className="nav-link " to="/pokemo">Pokémons</Link>
               </li>
               <li className="nav-item">
-              <Link className="nav-link " to="/items">Items</Link>
+              <Link className="nav-link " to="/items">Lista</Link>
               </li>
               
             </ul>

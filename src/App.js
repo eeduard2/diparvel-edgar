@@ -2,6 +2,7 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/navegacion/Navbar';
+import Footer from './components/navegacion/Footer';
 import Inicio from './components/paginas/Inicio';
 import Items from './components/paginas/Items';
 import Pokemo from './components/paginas/Pokemon';
@@ -26,7 +27,7 @@ useEffect(() => {
     .then(data => {
       //const datapokemon =data.results[0];
       setTodos(data.results)
-      console.log(data)
+    //  console.log(data)
       // Si todo esta cool, actualizamos el pokemón
       // Y le indicamos que no hay error
       
@@ -39,16 +40,17 @@ useEffect(() => {
 
 
   return (
-    <div className="App container">
+    <div className="App container"  >
       <Router>
       <Navbar/>  
       <Switch>
         <Route path="/" exact component={Inicio}/>
         <Route path="/pokemo"  component={() => <Pokemo todos={todos} />}/>
-        <Route path="/items"  component={Items}/>
+        <Route path="/items"  component={() => <Items todos={todos} />}/>
       </Switch> 
+      <Footer/>
       </Router>
-      
+    
      </div>
   );
 }

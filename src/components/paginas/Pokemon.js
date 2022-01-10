@@ -4,18 +4,13 @@ import { useEffect, useState } from 'react';
 const pokemon = ({ todos }) => {
  
 
-  function Example(url) {
+  function Cargar(url) {
     const [pok, setPok] = useState()
     useEffect(() => {
       fetch(url)
         .then(res => res.json())
         .then(data => {
-          //const datapokemon =data.results[0];
           setPok(data.sprites.front_default)
-         //  console.log(data)
-          // Si todo esta cool, actualizamos el pokemón
-          // Y le indicamos que no hay error
-          
         })
         .catch(err => {
           
@@ -40,7 +35,7 @@ const pokemon = ({ todos }) => {
           { !todos ? 'Cargando..' : 
         todos.map( (todo,index)=>{
           return <div className="card">
-          <img src={Example(todo.url)} width="250"/> 
+          <img src={Cargar(todo.url)} width="250"/> 
       
             <div className="card-body">
               <h5 className="card-title">{todo.name}</h5>
